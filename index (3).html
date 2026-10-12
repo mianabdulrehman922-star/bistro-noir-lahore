@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bistro Noir Lahore | Contemporary Luxury Fine Dining</title>
+    <meta name="description" content="Experience contemporary fine dining, artisanal steaks, wood-fired pizzas, and handcrafted pasta at Bistro Noir Lahore, MM Alam Road, Gulberg III.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        noir: {
+                            DEFAULT: '#0b0c10',
+                            card: '#121418',
+                            border: '#222630',
+                            hover: '#1a1d24'
+                        },
+                        gold: {
+                            light: '#e5c365',
+                            DEFAULT: '#d4af37',
+                            dark: '#a88620'
+                        },
+                        ivory: {
+                            DEFAULT: '#f5f2eb',
+                            muted: '#a39e93'
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'Playfair Display', 'serif'],
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #0b0c10;
+            color: #f5f2eb;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .bg-radial-vignette {
+            background: radial-gradient(circle at center, rgba(11, 12, 16, 0.4) 0%, rgba(11, 12, 16, 0.95) 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0c10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2d36;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d4af37;
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #f5e0a3 0%, #d4af37 50%, #a88620 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glass-card {
+            background: rgba(18, 20, 24, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(212, 175, 55, 0.4);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="selection:bg-gold selection:text-black">
+
+    <!-- Top Concept Disclaimer Banner -->
+    <div class="bg-[#16181e] border-b border-[#252833] text-[11px] text-ivory-muted py-2 px-4 text-center tracking-wide flex items-center justify-center gap-2">
+        <i class="fa-solid fa-sparkles text-gold text-xs"></i>
+        <span>Proposed Website Concept for <strong>Bistro Noir Lahore</strong>. Independent design preview.</span>
+    </div>
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="fixed top-8 left-0 right-0 z-40 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#hero" class="group flex flex-col focus:outline-none">
+                <span class="text-xl sm:text-2xl font-serif tracking-[0.25em] font-bold text-ivory group-hover:text-gold transition-colors uppercase">
+                    Bistro Noir
+                </span>
+                <span class="text-[9px] tracking-[0.4em] text-gold uppercase font-mono">
+                    Lahore • MM Alam
+                </span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center space-x-8 text-xs tracking-[0.2em] font-medium uppercase text-ivory-muted">
+                <a href="#hero" class="hover:text-gold transition-colors">Home</a>
+                <a href="#story" class="hover:text-gold transition-colors">Our Story</a>
+                <a href="#menu" class="hover:text-gold transition-colors">Menu</a>
+                <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </nav>
+
+            <!-- CTA Buttons -->
+            <div class="hidden md:flex items-center gap-4">
+                <a href="tel:+923001888718" class="px-4 py-2 text-xs tracking-wider border border-gold/40 text-gold hover:bg-gold hover:text-black transition-all duration-300 rounded-sm font-medium flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-xs"></i>
+                    <span>+92 300 1888718</span>
+                </a>
+                <a href="#reservation" class="px-5 py-2 text-xs tracking-widest bg-gradient-to-r from-gold to-gold-dark text-black font-semibold rounded-sm hover:brightness-110 transition-all uppercase shadow-lg shadow-gold/10">
+                    Reserve Table
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-ivory hover:text-gold focus:outline-none" aria-label="Toggle Navigation">
+                <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-[#0b0c10]/98 backdrop-blur-xl flex flex-col justify-between p-8 hidden transition-all duration-300">
+        <div class="flex items-center justify-between border-b border-[#222630] pb-6">
+            <div>
+                <span class="text-xl font-serif tracking-[0.2em] text-ivory font-bold block">BISTRO NOIR</span>
+                <span class="text-[10px] tracking-[0.3em] text-gold uppercase font-mono">Gulberg III • Lahore</span>
+            </div>
+            <button id="close-menu-btn" class="p-2 text-ivory-muted hover:text-white">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+        </div>
+
+        <div class="flex flex-col space-y-6 text-center text-lg font-serif tracking-widest text-ivory py-8">
+            <a href="#hero" class="mobile-nav-link hover:text-gold transition-colors">Home</a>
+            <a href="#story" class="mobile-nav-link hover:text-gold transition-colors">Our Story</a>
+            <a href="#menu" class="mobile-nav-link hover:text-gold transition-colors">Interactive Menu</a>
+            <a href="#gallery" class="mobile-nav-link hover:text-gold transition-colors">Food Gallery</a>
+            <a href="#reservation" class="mobile-nav-link hover:text-gold transition-colors">Reserve Table</a>
+            <a href="#contact" class="mobile-nav-link hover:text-gold transition-colors">Location & Contact</a>
+        </div>
+
+        <div class="flex flex-col gap-3 pt-6 border-t border-[#222630]">
+            <a href="tel:+923001888718" class="w-full py-3 text-center border border-gold text-gold font-medium tracking-wider text-xs uppercase rounded-sm flex items-center justify-center gap-2">
+                <i class="fa-solid fa-phone"></i> Call +92 300 1888718
+            </a>
+            <a href="#reservation" class="mobile-nav-link w-full py-3 text-center bg-gold text-black font-semibold tracking-wider text-xs uppercase rounded-sm">
+                Request Table Enquiry
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=2000&q=80" alt="Bistro Noir Atmosphere" class="w-full h-full object-cover object-center filter brightness-[0.25] scale-105 transform transition-transform duration-10000">
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0b0c10] via-[#0b0c10]/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-radial-vignette opacity-70 pointer-events-none"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-4 text-center flex flex-col items-center">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#16181e]/90 border border-gold/30 backdrop-blur-md mb-8 text-xs tracking-[0.2em] text-gold uppercase">
+                <i class="fa-solid fa-location-dot text-gold"></i>
+                <span>MM Alam Road • Block B1, Gulberg III, Lahore</span>
+            </div>
+
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-serif font-normal text-ivory tracking-tight leading-[1.15] mb-6">
+                An Experience <br>
+                <span class="italic font-light gold-gradient-text">Beyond the Ordinary</span>
+            </h1>
+
+            <p class="max-w-2xl text-sm sm:text-base md:text-lg text-ivory-muted font-light leading-relaxed mb-10 tracking-wide">
+                Discover thoughtfully crafted flavours, artisanal steaks, delicate European pasta, and an elegant dining atmosphere at Bistro Noir Lahore.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+                <a href="#menu" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-gold to-gold-dark text-black font-medium text-xs tracking-[0.25em] uppercase rounded-sm hover:brightness-110 transition-all shadow-xl shadow-gold/15 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-utensils"></i>
+                    <span>Explore Our Menu</span>
+                </a>
+
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 border border-[#3a3d47] bg-[#121418]/80 hover:border-gold text-ivory font-medium text-xs tracking-[0.25em] uppercase rounded-sm transition-all flex items-center justify-center gap-2 backdrop-blur-sm">
+                    <i class="fa-solid fa-compass text-gold"></i>
+                    <span>Find Us</span>
+                </a>
+
+                <a href="tel:+923001888718" class="w-full sm:w-auto px-8 py-4 border border-gold/40 bg-transparent hover:bg-gold/10 text-gold font-medium text-xs tracking-[0.25em] uppercase rounded-sm transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Call Restaurant</span>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-12 mt-16 pt-12 border-t border-[#1e2128] text-center w-full max-w-3xl">
+                <div>
+                    <p class="text-2xl sm:text-3xl font-serif text-gold">Gulberg III</p>
+                    <p class="text-[11px] text-ivory-muted uppercase tracking-widest mt-1">Prime Location</p>
+                </div>
+                <div>
+                    <p class="text-2xl sm:text-3xl font-serif text-gold">European</p>
+                    <p class="text-[11px] text-ivory-muted uppercase tracking-widest mt-1">Inspired Bistro</p>
+                </div>
+                <div class="col-span-2 sm:col-span-1">
+                    <p class="text-2xl sm:text-3xl font-serif text-gold">7 Days</p>
+                    <p class="text-[11px] text-ivory-muted uppercase tracking-widest mt-1">Lunch & Dinner</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section id="story" class="py-24 bg-[#0f1015] border-t border-b border-[#1c1f28] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Mosaic Image Side -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-sm overflow-hidden border border-[#282c38] shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1000&q=80" alt="Bistro Interior" class="w-full h-[450px] object-cover filter brightness-90 hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="hidden sm:block absolute -bottom-8 -right-8 w-2/3 rounded-sm overflow-hidden border-2 border-gold/40 shadow-2xl bg-noir">
+                        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80" alt="Plated Steak" class="w-full h-[220px] object-cover">
+                    </div>
+                    <div class="absolute top-4 left-4 bg-noir/90 border border-gold/30 p-4 rounded-sm backdrop-blur-md">
+                        <i class="fa-solid fa-award text-gold text-lg mb-1"></i>
+                        <p class="text-xs font-serif text-ivory tracking-wider uppercase">Culinary Passion</p>
+                    </div>
+                </div>
+
+                <!-- Text Content Side -->
+                <div class="lg:col-span-6 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-xs font-mono text-gold tracking-[0.3em] uppercase">
+                        <span class="w-8 h-[1px] bg-gold"></span>
+                        <span>Contemporary Destination</span>
+                    </div>
+
+                    <h2 class="text-3xl sm:text-5xl font-serif text-ivory leading-tight">
+                        Crafted For <span class="italic text-gold">Discerning</span> Tastebuds
+                    </h2>
+
+                    <p class="text-ivory-muted text-sm sm:text-base leading-relaxed font-light">
+                        Located on MM Alam Road in Gulberg III, Bistro Noir Lahore introduces an elegant dining atmosphere pairing modern European bistro influences with signature flame-grilled steaks, rich hand-crafted pasta, and artisanal wood-fired pizzas.
+                    </p>
+
+                    <p class="text-ivory-muted text-sm sm:text-base leading-relaxed font-light">
+                        With deep noir interiors, soft golden lighting, and meticulous plating, Bistro Noir offers a serene environment for intimate family dinners, business lunches, or relaxed weekend coffee gatherings.
+                    </p>
+
+                    <div class="pt-4 grid grid-cols-2 gap-6 border-t border-[#222630]">
+                        <div>
+                            <h4 class="text-xs font-mono uppercase tracking-widest text-gold mb-1">Ambiance</h4>
+                            <p class="text-xs text-ivory-muted">Noir Luxury, Warm Ivory & Golden Details</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-mono uppercase tracking-widest text-gold mb-1">Kitchen Focus</h4>
+                            <p class="text-xs text-ivory-muted">Fresh Daily Prep & Premium Cut Steaks</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="#reservation" class="inline-flex items-center gap-2 text-xs font-medium tracking-[0.2em] text-gold hover:text-white uppercase transition-colors">
+                            <span>Plan Your Visit</span>
+                            <i class="fa-solid fa-chevron-right text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="py-24 bg-noir relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <span class="text-xs font-mono text-gold tracking-[0.3em] uppercase block mb-2">Artisanal Selection</span>
+                <h2 class="text-3xl sm:text-5xl font-serif text-ivory mb-4">The Restaurant Menu</h2>
+                <p class="text-ivory-muted text-sm font-light leading-relaxed">
+                    Explore our dishes with verified PKR pricing reference. Filter by category or search by dish name.
+                </p>
+            </div>
+
+            <!-- Search & Filters -->
+            <div class="space-y-6 mb-12">
+                <div class="max-w-md mx-auto relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-ivory-muted text-xs"></i>
+                    <input type="text" id="menu-search-input" placeholder="Search dishes (e.g. Steak, Alfredo, Espresso)..." class="w-full bg-[#14171d] border border-[#282c38] rounded-sm py-3 pl-10 pr-4 text-xs text-ivory placeholder-ivory-muted/60 focus:outline-none focus:border-gold transition-all">
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-4 justify-start md:justify-center border-b border-[#1d2029]" id="category-filter-container">
+                    <!-- Buttons dynamically built by JS -->
+                </div>
+            </div>
+
+            <!-- Menu Grid -->
+            <div id="menu-items-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <!-- Injected dynamically via JS -->
+            </div>
+
+            <!-- Foodpanda External CTA -->
+            <div class="mt-16 bg-gradient-to-r from-[#14171e] via-[#101217] to-[#14171e] border border-[#2c2f3b] rounded-sm p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+                <div>
+                    <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-gold block mb-1">Online Food panda Reference</span>
+                    <h4 class="text-xl font-serif text-ivory">Want to explore delivery options?</h4>
+                    <p class="text-xs text-ivory-muted mt-1">View Bistro Noir listing on Foodpanda online menu.</p>
+                </div>
+                <a href="https://www.foodpanda.pk/restaurant/hovo/bistro-noir-hovo" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-[#1e222b] hover:bg-gold hover:text-black text-gold border border-gold/40 text-xs uppercase tracking-widest font-semibold rounded-sm transition-all duration-300 flex items-center gap-2 shrink-0">
+                    <span>View Full Menu on Foodpanda</span>
+                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-[#0f1015] border-t border-[#1d2029] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <span class="text-xs font-mono text-gold tracking-[0.3em] uppercase block mb-2">Visual Showcase</span>
+                    <h2 class="text-3xl sm:text-5xl font-serif text-ivory">Plating & Interiors</h2>
+                </div>
+
+                <div class="flex items-center gap-2 overflow-x-auto pb-2" id="gallery-filter-container">
+                    <button data-gallery-cat="all" class="gallery-cat-btn active px-3 py-1.5 text-[11px] font-mono uppercase rounded-sm bg-gold text-black">All Photos</button>
+                    <button data-gallery-cat="plating" class="gallery-cat-btn px-3 py-1.5 text-[11px] font-mono uppercase rounded-sm bg-[#181b22] text-ivory-muted hover:text-white">Plating</button>
+                    <button data-gallery-cat="interiors" class="gallery-cat-btn px-3 py-1.5 text-[11px] font-mono uppercase rounded-sm bg-[#181b22] text-ivory-muted hover:text-white">Interiors</button>
+                    <button data-gallery-cat="steaks" class="gallery-cat-btn px-3 py-1.5 text-[11px] font-mono uppercase rounded-sm bg-[#181b22] text-ivory-muted hover:text-white">Steaks</button>
+                    <button data-gallery-cat="sweets" class="gallery-cat-btn px-3 py-1.5 text-[11px] font-mono uppercase rounded-sm bg-[#181b22] text-ivory-muted hover:text-white">Coffee & Sweets</button>
+                </div>
+            </div>
+
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Injected by JavaScript -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-24 bg-noir relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="bg-[#121418] border border-[#282c38] rounded-sm p-8 sm:p-12 relative shadow-2xl overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-mono text-gold tracking-[0.3em] uppercase block mb-2">Book Your Table</span>
+                    <h2 class="text-3xl sm:text-4xl font-serif text-ivory">Reservation Enquiry</h2>
+                    <p class="text-xs sm:text-sm text-ivory-muted mt-2 font-light">
+                        Submit a table reservation request below. Our staff will confirm seating availability.
+                    </p>
+                </div>
+
+                <form id="reservation-form" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gold mb-2">Full Name *</label>
+                            <input type="text" id="res-name" required placeholder="e.g. Hammad Khan" class="w-full bg-[#181b22] border border-[#282d3a] rounded-sm p-3 text-xs text-ivory focus:outline-none focus:border-gold">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gold mb-2">Phone / WhatsApp *</label>
+                            <input type="tel" id="res-phone" required placeholder="+92 300 0000000" class="w-full bg-[#181b22] border border-[#282d3a] rounded-sm p-3 text-xs text-ivory focus:outline-none focus:border-gold">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gold mb-2">Preferred Date *</label>
+                            <input type="date" id="res-date" required class="w-full bg-[#181b22] border border-[#282d3a] rounded-sm p-3 text-xs text-ivory focus:outline-none focus:border-gold">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gold mb-2">Preferred Time</label>
+                            <select id="res-time" class="w-full bg-[#181b22] border border-[#282d3a] rounded-sm p-3 text-xs text-ivory focus:outline-none focus:border-gold">
+                                <option value="12:30 PM">12:30 PM (Lunch)</option>
+                                <option value="02:00 PM">02:00 PM (Lunch)</option>
+                                <option value="07:30 PM" selected>07:30 PM (Dinner)</option>
+                                <option value="08:30 PM">08:30 PM (Dinner)</option>
+                                <option value="09:30 PM">09:30 PM (Late Dinner)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gold mb-2">Number of Guests</label>
+                            <select id="res-guests" class="w-full bg-[#181b22] border border-[#282d3a] rounded-sm p-3 text-xs text-ivory focus:outline-none focus:border-gold">
+                                <option value="1 Guest">1 Guest</option>
+                                <option value="2 Guests" selected>2 Guests</option>
+                                <option value="4 Guests">4 Guests</option>
+                                <option value="6 Guests">6 Guests</option>
+                                <option value="8+ Guests">8+ Guests (Group)</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-mono uppercase tracking-wider text-gold mb-2">Special Requests</label>
+                            <input type="text" id="res-notes" placeholder="e.g. Birthday, Quiet corner table" class="w-full bg-[#181b22] border border-[#282d3a] rounded-sm p-3 text-xs text-ivory focus:outline-none focus:border-gold">
+                        </div>
+
+                    </div>
+
+                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#222630]">
+                        <p class="text-[11px] text-ivory-muted font-light">
+                            * Note: This sends a seating availability enquiry to the restaurant.
+                        </p>
+                        <button type="submit" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-gold to-gold-dark text-black font-semibold text-xs tracking-[0.2em] uppercase rounded-sm hover:brightness-110 transition-all shadow-lg shadow-gold/10">
+                            Submit Table Request
+                        </button>
+                    </div>
+                </form>
+
+                <div class="mt-8 pt-6 border-t border-[#1f222b] flex flex-wrap items-center justify-between gap-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-[#1a1d26] border border-gold/30 flex items-center justify-center text-gold">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-ivory font-medium">Need Urgent Assistance?</p>
+                            <p class="text-[11px] text-ivory-muted">Call our desk for immediate seating checks.</p>
+                        </div>
+                    </div>
+                    <a href="tel:+923001888718" class="px-4 py-2 border border-gold/40 text-gold hover:bg-gold hover:text-black text-xs font-mono uppercase tracking-wider rounded-sm transition-all">
+                        +92 300 1888718
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-24 bg-[#0f1015] border-t border-[#1f222b] relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-mono text-gold tracking-[0.3em] uppercase block mb-2">Find & Contact Us</span>
+                        <h2 class="text-3xl sm:text-4xl font-serif text-ivory">Location & Hours</h2>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 bg-[#14171e] border border-[#222632] rounded-sm">
+                            <i class="fa-solid fa-location-dot text-gold text-lg mt-1"></i>
+                            <div>
+                                <h4 class="text-xs font-mono text-gold uppercase tracking-wider mb-1">Address</h4>
+                                <p class="text-sm text-ivory">MM Alam Road, Block B1, Gulberg III, Lahore, Pakistan</p>
+                                <a href="https://maps.app.goo.gl/BLQcdAxdeeCikV3z8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-gold hover:underline mt-2 font-mono uppercase tracking-wide">
+                                    <span>Directions on Google Maps</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-[#14171e] border border-[#222632] rounded-sm">
+                            <i class="fa-solid fa-phone text-gold text-lg mt-1"></i>
+                            <div>
+                                <h4 class="text-xs font-mono text-gold uppercase tracking-wider mb-1">Direct Telephone</h4>
+                                <p class="text-sm text-ivory">+92 300 1888718</p>
+                                <a href="tel:+923001888718" class="inline-flex items-center gap-1.5 text-xs text-gold hover:underline mt-2 font-mono uppercase tracking-wide">
+                                    <span>Click to Call Restaurant</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4 p-4 bg-[#14171e] border border-[#222632] rounded-sm">
+                            <i class="fa-solid fa-clock text-gold text-lg mt-1"></i>
+                            <div>
+                                <h4 class="text-xs font-mono text-gold uppercase tracking-wider mb-1">Opening Hours</h4>
+                                <p class="text-xs text-ivory">Monday – Sunday: 12:00 PM – 12:00 AM Midnight</p>
+                                <p class="text-[11px] text-ivory-muted mt-1">(Kitchen orders close at 11:15 PM)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="https://maps.app.goo.gl/BLQcdAxdeeCikV3z8" target="_blank" rel="noopener noreferrer" class="w-full py-4 bg-gradient-to-r from-gold to-gold-dark text-black font-semibold text-xs uppercase tracking-[0.2em] rounded-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-gold/10">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                            <span>Open Google Maps Directions</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual Location Map Card -->
+                <div class="lg:col-span-7">
+                    <div class="relative rounded-sm overflow-hidden border border-[#282c38] bg-[#14171e] h-[420px] shadow-2xl flex flex-col justify-between p-6">
+                        
+                        <div class="relative z-10 flex justify-between items-start">
+                            <div class="bg-noir/90 backdrop-blur-md border border-gold/30 p-4 rounded-sm">
+                                <span class="text-xs font-serif text-ivory block font-bold">BISTRO NOIR LAHORE</span>
+                                <span class="text-[10px] text-gold font-mono block">MM Alam Road, Gulberg III</span>
+                            </div>
+                            <a href="https://maps.app.goo.gl/BLQcdAxdeeCikV3z8" target="_blank" rel="noopener noreferrer" class="p-3 bg-gold text-black rounded-sm hover:brightness-110 transition-all shadow-lg" title="Open Map">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+
+                        <div class="absolute inset-0 z-0">
+                            <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1200&q=80" alt="Map Location Graphic" class="w-full h-full object-cover filter brightness-[0.3] contrast-125">
+                            <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-noir/80"></div>
+                            
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                                <div class="w-12 h-12 rounded-full bg-gold text-black flex items-center justify-center shadow-2xl animate-bounce">
+                                    <i class="fa-solid fa-utensils text-lg"></i>
+                                </div>
+                                <span class="bg-noir text-gold text-[10px] font-mono px-3 py-1 rounded-sm border border-gold/40 mt-2 shadow-xl">
+                                    Bistro Noir Here
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="relative z-10 bg-noir/90 backdrop-blur-md border border-[#222632] p-4 rounded-sm text-xs text-ivory-muted flex flex-col sm:flex-row justify-between items-center gap-3">
+                            <span>Located in Block B1, Gulberg III — MM Alam dining hub.</span>
+                            <a href="https://maps.app.goo.gl/BLQcdAxdeeCikV3z8" target="_blank" rel="noopener noreferrer" class="text-gold font-mono text-[11px] uppercase tracking-wider hover:underline shrink-0">
+                                Open Map →
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Dish Modal -->
+    <div id="dish-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-[#14171d] border border-[#282c38] rounded-sm max-w-lg w-full overflow-hidden shadow-2xl relative animate-fade-in">
+            <button id="close-dish-modal" class="absolute top-4 right-4 z-10 p-2 rounded-full bg-black/60 text-white hover:text-gold">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="dish-modal-body">
+                <!-- Dynamic Content Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="relative max-w-4xl w-full text-center">
+            <button id="close-lightbox" class="absolute -top-10 right-0 text-white hover:text-gold text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="lightbox-img" src="" alt="Zoomed gallery photo" class="w-full max-h-[80vh] object-contain rounded-sm border border-[#282c38]">
+            <div class="mt-4">
+                <h4 id="lightbox-title" class="text-xl font-serif text-ivory"></h4>
+                <p id="lightbox-desc" class="text-xs text-ivory-muted font-light mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reservation Feedback Modal -->
+    <div id="res-success-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden">
+        <div class="bg-[#161820] border border-gold/40 p-8 rounded-sm text-center max-w-lg w-full shadow-2xl animate-fade-in">
+            <i class="fa-solid fa-circle-check text-gold text-5xl mb-4"></i>
+            <h3 class="text-2xl font-serif text-ivory mb-2">Reservation Request Sent</h3>
+            <p id="res-success-text" class="text-xs text-ivory-muted leading-relaxed mb-6 font-light">
+                Thank you. We have logged your enquiry. Our front desk will contact you via phone/WhatsApp to confirm available seating.
+            </p>
+            <button id="close-res-modal" class="px-6 py-2.5 bg-gold text-black font-semibold text-xs uppercase tracking-wider rounded-sm hover:brightness-110">
+                Close Confirmation
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-[#08080a] border-t border-[#181a22] pt-16 pb-12 text-xs text-ivory-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-[#181a22]">
+                
+                <div class="md:col-span-5 space-y-4">
+                    <div>
+                        <span class="text-xl font-serif tracking-[0.25em] font-bold text-ivory uppercase block">
+                            BISTRO NOIR
+                        </span>
+                        <span class="text-[10px] tracking-[0.3em] text-gold uppercase font-mono block">
+                            LAHORE • MM ALAM ROAD
+                        </span>
+                    </div>
+                    <p class="text-xs text-ivory-muted leading-relaxed max-w-sm font-light">
+                        Elevated fine dining presenting curated prime steaks, hand-crafted pasta, artisanal wood-fired pizza, and dark noir ambiance in Gulberg III.
+                    </p>
+                </div>
+
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="text-xs font-mono uppercase tracking-widest text-gold">Navigation</h4>
+                    <ul class="space-y-2 text-[11px] uppercase tracking-wider font-mono">
+                        <li><a href="#hero" class="hover:text-gold">Home</a></li>
+                        <li><a href="#story" class="hover:text-gold">Our Story</a></li>
+                        <li><a href="#menu" class="hover:text-gold">Interactive Menu</a></li>
+                        <li><a href="#gallery" class="hover:text-gold">Photo Gallery</a></li>
+                        <li><a href="#reservation" class="hover:text-gold">Reserve Table</a></li>
+                    </ul>
+                </div>
+
+                <div class="md:col-span-4 space-y-3">
+                    <h4 class="text-xs font-mono uppercase tracking-widest text-gold">Contact Details</h4>
+                    <p class="text-xs text-ivory">MM Alam Road, Block B1, Gulberg III, Lahore, Pakistan</p>
+                    <p class="text-xs text-gold font-mono">Phone: +92 300 1888718</p>
+                    <div class="pt-2">
+                        <a href="https://maps.app.goo.gl/BLQcdAxdeeCikV3z8" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 border border-[#242834] hover:border-gold text-[10px] uppercase font-mono text-gold rounded-sm transition-all inline-block">
+                            Google Maps Location
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] font-mono text-[#585c69]">
+                <p>© 2026 Bistro Noir Lahore. Concept Presentation.</p>
+                <a href="#hero" class="flex items-center gap-1.5 text-gold hover:underline uppercase text-[10px]">
+                    <span>Back to top</span>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Menu Dataset
+        const categories = [
+            { id: 'all', name: 'All Dishes' },
+            { id: 'starters', name: 'Starters & Soups' },
+            { id: 'salads', name: 'Salads' },
+            { id: 'pizza', name: 'Pizza' },
+            { id: 'pasta', name: 'Pasta' },
+            { id: 'mains', name: 'Main Courses' },
+            { id: 'burgers', name: 'Burgers' },
+            { id: 'seafood', name: 'Seafood' },
+            { id: 'desserts', name: 'Desserts' },
+            { id: 'beverages', name: 'Coffee & Beverages' }
+        ];
+
+        const menuItems = [
+            { id: 's1', name: 'Dynamite Shrimp', category: 'starters', price: 1650, description: 'Crispy wild prawns tossed in house spicy sriracha glaze, topped with toasted sesame and chives.', image: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=800&q=80', tag: 'Popular' },
+            { id: 's2', name: 'Mozzarella Sticks', category: 'starters', price: 1250, description: 'Golden hand-breaded mozzarella served with roasted garlic marinara dip.', image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?auto=format&fit=crop&w=800&q=80', tag: 'Vegetarian' },
+            { id: 's3', name: 'Truffle Parmesan Fries', category: 'starters', price: 950, description: 'Triple-cooked fries coated in black truffle oil, micro herbs, and aged parmesan.', image: 'https://images.unsplash.com/photo-1576107232684-1279f3908594?auto=format&fit=crop&w=800&q=80', tag: 'Special' },
+            { id: 'sl1', name: 'Classic Caesar Salad', category: 'salads', price: 1450, description: 'Romaine lettuce, flame-grilled chicken breast, sourdough croutons, Caesar emulsion.', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80', tag: 'Fresh' },
+            { id: 'p1', name: 'Pepperoni & Hot Honey Pizza', category: 'pizza', price: 2150, description: 'Wood-fired crust, San Marzano sauce, beef pepperoni, fior di latte, chili-infused honey.', image: 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=80', tag: 'Signature' },
+            { id: 'p2', name: 'Quattro Formaggi Pizza', category: 'pizza', price: 2250, description: 'Gorgonzola, smoked provolone, fresh mozzarella, and sharp parmesan.', image: 'https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80', tag: 'Vegetarian' },
+            { id: 'pa1', name: 'Fettuccine Alfredo', category: 'pasta', price: 1750, description: 'Handmade fettuccine, rich garlic cream, aged Parmigiano, herb-crusted grilled chicken.', image: 'https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=800&q=80', tag: 'Classic' },
+            { id: 'pa2', name: 'Truffle Cream Penne', category: 'pasta', price: 1950, description: 'Penne rigate in a velvet black truffle reduction with sauteed woodland mushrooms.', image: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=800&q=80', tag: 'Chef Special' },
+            { id: 'm1', name: 'Filet Mignon Steak', category: 'mains', price: 3450, description: 'Center-cut prime tenderloin steak, garlic potato puree, grilled asparagus, mushroom jus.', image: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=800&q=80', tag: 'Prime Cut' },
+            { id: 'm2', name: 'Grilled Ribeye Steak', category: 'mains', price: 3850, description: '300g marbling ribeye, rosemary compound butter, charred tomatoes, steak fries.', image: 'https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=800&q=80', tag: 'Chef Choice' },
+            { id: 'b1', name: 'Noir Prime Smash Burger', category: 'burgers', price: 1650, description: 'Double smashed wagyu-style patties, cheddar, caramelized onions, truffle aioli, brioche bun.', image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80', tag: 'Signature' },
+            { id: 'f1', name: 'Pan-Seared Norwegian Salmon', category: 'seafood', price: 3950, description: 'Crispy skin salmon fillet, pea puree, buttered baby carrots, lemon caper butter.', image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=800&q=80', tag: 'Seafood' },
+            { id: 'd1', name: 'Dark Chocolate Lava Cake', category: 'desserts', price: 1150, description: 'Warm cocoa cake with molten chocolate center, Madagascar vanilla gelato.', image: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80', tag: 'Decadent' },
+            { id: 'd2', name: 'Vanilla Bean Cheesecake', category: 'desserts', price: 1250, description: 'New York style cheesecake on graham crust with raspberry reduction.', image: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80', tag: 'Sweet' },
+            { id: 'bv1', name: 'Spanish Latte', category: 'beverages', price: 750, description: 'Rich double shot espresso poured over silky steamed milk and sweetened condensed milk.', image: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80', tag: 'Bestseller' },
+            { id: 'bv2', name: 'Passionfruit Mint Mocktail', category: 'beverages', price: 850, description: 'Passionfruit pulp muddled with fresh mint, lime juice, sparkling soda water.', image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=800&q=80', tag: 'Chilled' }
+        ];
+
+        // Gallery Dataset
+        const galleryItems = [
+            { id: 'g1', category: 'plating', title: 'Tenderloin Plating', url: 'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80', desc: 'Precision tenderloin steaks plated with seasonal glaze.' },
+            { id: 'g2', category: 'interiors', title: 'Dining Atmosphere', url: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80', desc: 'Warm ambient lighting designed for intimate dinners.' },
+            { id: 'g3', category: 'steaks', title: 'Ribeye Sear', url: 'https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80', desc: 'Flame-seared prime beef ribeye.' },
+            { id: 'g4', category: 'sweets', title: 'Belgian Lava Cake', url: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=1200&q=80', desc: 'Warm lava cake paired with Madagascar gelato.' },
+            { id: 'g5', category: 'plating', title: 'Handcrafted Truffle Pasta', url: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=1200&q=80', desc: 'Silky pasta made fresh in our kitchen.' },
+            { id: 'g6', category: 'interiors', title: 'Noir Coffee Corner', url: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80', desc: 'Relaxing nook on MM Alam Road.' }
+        ];
+
+        let activeCategory = 'all';
+        let searchQuery = '';
+
+        // DOM Element References
+        const header = document.getElementById('main-header');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const categoryFilterContainer = document.getElementById('category-filter-container');
+        const menuItemsGrid = document.getElementById('menu-items-grid');
+        const menuSearchInput = document.getElementById('menu-search-input');
+        const dishModal = document.getElementById('dish-modal');
+        const dishModalBody = document.getElementById('dish-modal-body');
+        const closeDishModal = document.getElementById('close-dish-modal');
+        const galleryGrid = document.getElementById('gallery-grid');
+        const lightboxModal = document.getElementById('lightbox-modal');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxTitle = document.getElementById('lightbox-title');
+        const lightboxDesc = document.getElementById('lightbox-desc');
+        const closeLightbox = document.getElementById('close-lightbox');
+        const reservationForm = document.getElementById('reservation-form');
+        const resSuccessModal = document.getElementById('res-success-modal');
+        const resSuccessText = document.getElementById('res-success-text');
+        const closeResModal = document.getElementById('close-res-modal');
+
+        // Sticky Nav Scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.classList.add('bg-[#0b0c10]/95', 'backdrop-blur-md', 'border-b', 'border-[#1e222b]', 'shadow-2xl', 'py-3');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.remove('bg-[#0b0c10]/95', 'backdrop-blur-md', 'border-b', 'border-[#1e222b]', 'shadow-2xl', 'py-3');
+                header.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Drawer Handlers
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        closeMenuBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+
+        // Render Category Filter Tabs
+        function renderCategories() {
+            categoryFilterContainer.innerHTML = categories.map(cat => `
+                <button 
+                    onclick="setCategory('${cat.id}')"
+                    class="px-4 py-2 text-xs font-medium tracking-wider uppercase whitespace-nowrap rounded-sm transition-all duration-300 ${activeCategory === cat.id ? 'bg-gold text-black font-semibold' : 'bg-[#14171d] text-ivory-muted hover:text-white border border-[#222632]'}"
+                >
+                    ${cat.name}
+                </button>
+            `).join('');
+        }
+
+        function setCategory(catId) {
+            activeCategory = catId;
+            renderCategories();
+            renderMenuItems();
+        }
+
+        // Render Menu Items Grid
+        function renderMenuItems() {
+            const filtered = menuItems.filter(item => {
+                const matchesCat = activeCategory === 'all' || item.category === activeCategory;
+                const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase()) || item.description.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                menuItemsGrid.innerHTML = `
+                    <div class="col-span-full text-center py-12 border border-dashed border-[#222632] rounded-sm">
+                        <p class="text-ivory-muted text-xs">No menu items match your search filter.</p>
+                        <button onclick="resetMenuFilters()" class="mt-3 px-4 py-1.5 bg-[#181b22] text-gold border border-gold/30 text-xs uppercase tracking-wider rounded-sm">
+                            Reset Filters
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            menuItemsGrid.innerHTML = filtered.map(item => `
+                <div 
+                    onclick="openDishModal('${item.id}')"
+                    class="group bg-[#121418] border border-[#222630] rounded-sm overflow-hidden hover:border-gold/50 transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                >
+                    <div>
+                        <div class="relative h-48 overflow-hidden bg-[#181a20]">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter brightness-95">
+                            <span class="absolute top-3 left-3 bg-noir/80 border border-gold/30 text-gold text-[10px] font-mono px-2 py-0.5 rounded-sm backdrop-blur-sm uppercase">
+                                ${item.tag}
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <div class="flex items-start justify-between gap-2 mb-2">
+                                <h3 class="text-lg font-serif text-ivory group-hover:text-gold transition-colors leading-snug">${item.name}</h3>
+                                <span class="text-xs font-mono font-semibold text-gold shrink-0">PKR ${item.price.toLocaleString()}</span>
+                            </div>
+                            <p class="text-xs text-ivory-muted line-clamp-2 leading-relaxed font-light">${item.description}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-4 pt-2 flex items-center justify-between border-t border-[#1a1d26] text-[11px] text-gold font-mono uppercase tracking-wider">
+                        <span>View Details</span>
+                        <i class="fa-solid fa-chevron-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        menuSearchInput.addEventListener('input', (e) => {
+            searchQuery = e.target.value;
+            renderMenuItems();
+        });
+
+        function resetMenuFilters() {
+            activeCategory = 'all';
+            searchQuery = '';
+            menuSearchInput.value = '';
+            renderCategories();
+            renderMenuItems();
+        }
+
+        // Dish Modal Popups
+        function openDishModal(id) {
+            const dish = menuItems.find(m => m.id === id);
+            if (!dish) return;
+
+            dishModalBody.innerHTML = `
+                <div class="h-60 relative overflow-hidden bg-[#181b22]">
+                    <img src="${dish.image}" alt="${dish.name}" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#14171d] via-transparent to-transparent"></div>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-center justify-between gap-4 mb-2">
+                        <span class="text-[10px] font-mono text-gold uppercase tracking-widest bg-[#1c2029] px-2.5 py-1 rounded-sm border border-[#282d3a]">
+                            ${dish.category}
+                        </span>
+                        <span class="text-base font-mono font-semibold text-gold">PKR ${dish.price.toLocaleString()}</span>
+                    </div>
+                    <h3 class="text-2xl font-serif text-ivory mb-3">${dish.name}</h3>
+                    <p class="text-xs text-ivory-muted leading-relaxed font-light mb-6">${dish.description}</p>
+                    <div class="flex flex-col sm:flex-row gap-3 pt-4 border-t border-[#222630]">
+                        <a href="#reservation" onclick="closeDishModalFunc()" class="flex-1 py-3 bg-gold text-black font-semibold text-xs uppercase tracking-wider rounded-sm text-center hover:brightness-110">
+                            Book Table To Taste
+                        </a>
+                        <a href="tel:+923001888718" class="px-4 py-3 border border-[#2c313f] text-gold text-xs font-mono uppercase tracking-wider rounded-sm flex items-center justify-center gap-2 hover:bg-[#1a1d26]">
+                            <i class="fa-solid fa-phone"></i> Call Order
+                        </a>
+                    </div>
+                </div>
+            `;
+            dishModal.classList.remove('hidden');
+        }
+
+        function closeDishModalFunc() {
+            dishModal.classList.add('hidden');
+        }
+        closeDishModal.addEventListener('click', closeDishModalFunc);
+
+        // Gallery Render & Filter
+        function renderGallery(cat = 'all') {
+            const filtered = cat === 'all' ? galleryItems : galleryItems.filter(g => g.category === cat);
+            galleryGrid.innerHTML = filtered.map(item => `
+                <div 
+                    onclick="openLightbox('${item.url}', '${item.title}', '${item.desc}')"
+                    class="group relative h-72 rounded-sm overflow-hidden border border-[#222632] cursor-pointer bg-[#14171e]"
+                >
+                    <img src="${item.url}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 filter brightness-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-noir via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <span class="text-[10px] font-mono text-gold uppercase tracking-widest block mb-1">${item.category}</span>
+                        <h4 class="text-base font-serif text-ivory">${item.title}</h4>
+                        <p class="text-xs text-ivory-muted font-light mt-1">${item.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.querySelectorAll('.gallery-cat-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.gallery-cat-btn').forEach(b => {
+                    b.classList.remove('bg-gold', 'text-black');
+                    b.classList.add('bg-[#181b22]', 'text-ivory-muted');
+                });
+                e.target.classList.remove('bg-[#181b22]', 'text-ivory-muted');
+                e.target.classList.add('bg-gold', 'text-black');
+                renderGallery(e.target.getAttribute('data-gallery-cat'));
+            });
+        });
+
+        function openLightbox(url, title, desc) {
+            lightboxImg.src = url;
+            lightboxTitle.innerText = title;
+            lightboxDesc.innerText = desc;
+            lightboxModal.classList.remove('hidden');
+        }
+        closeLightbox.addEventListener('click', () => lightboxModal.classList.add('hidden'));
+
+        // Reservation Submit Handler
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('res-name').value;
+            const phone = document.getElementById('res-phone').value;
+            const date = document.getElementById('res-date').value || 'Requested Date';
+            const time = document.getElementById('res-time').value;
+            const guests = document.getElementById('res-guests').value;
+
+            resSuccessText.innerHTML = `
+                Thank you, <strong>${name}</strong>. We registered your enquiry for <strong>${guests}</strong> on <strong>${date}</strong> at <strong>${time}</strong>.
+                <br><br>Our front desk will call <strong>${phone}</strong> shortly to confirm table availability.
+            `;
+            resSuccessModal.classList.remove('hidden');
+            reservationForm.reset();
+        });
+
+        closeResModal.addEventListener('click', () => resSuccessModal.classList.add('hidden'));
+
+        // Initial Load Inits
+        renderCategories();
+        renderMenuItems();
+        renderGallery();
+    </script>
+</body>
+</html>
